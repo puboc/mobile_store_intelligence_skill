@@ -14,9 +14,11 @@ Use this skill when the user wants app intelligence from the Apple App Store or 
 
 ## Workspace files
 
-- `requirements.txt` — Python dependency for Google Play scraping
-- `package.json` — Node dependency for Apple App Store scraping
-- `scripts/setup.sh` — installs local dependencies into this skill folder
+- `vendor/app-store-scraper` — vendored Apple App Store scraper source
+- `vendor/google-play-scraper` — vendored Google Play scraper source
+- `requirements.txt` — Python install target for the vendored Google Play scraper
+- `package.json` — Node install target for the vendored Apple App Store scraper
+- `scripts/setup.sh` — installs local dependencies into this skill folder from vendored sources
 - `scripts/mobile_store_intel.py` — unified CLI wrapper
 - `scripts/apple_app_store.mjs` — Apple App Store adapter
 
@@ -70,7 +72,8 @@ python3 scripts/mobile_store_intel.py compare \
 
 ## Notes
 
-- Apple lookups use the `app-store-scraper` Node package.
-- Google Play lookups use the `google-play-scraper` Python package.
+- Apple lookups use the vendored `app-store-scraper` Node package.
+- Google Play lookups use the vendored `google-play-scraper` Python package.
+- Setup installs from local vendored source; no GitHub pull is required at runtime.
 - Country defaults to `us` and language defaults to `en` unless overridden.
 - Output is JSON so other scripts and agents can consume it easily.

@@ -1,1 +1,1 @@
-google-play-scraper>=1.2.7,<2
+./vendor/google-play-scraper
