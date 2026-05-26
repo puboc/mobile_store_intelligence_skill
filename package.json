@@ -1,0 +1,10 @@
+{
+  "name": "mobile-store-intelligence-skill",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "OpenClaw skill utilities for Apple App Store and Google Play intelligence.",
+  "dependencies": {
+    "app-store-scraper": "^0.18.0"
+  }
+}
